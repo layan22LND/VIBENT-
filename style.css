@@ -102,3 +102,17 @@ a:hover {
     transform: scale(1.15); /* تأثير تكبير خفيف عند التمرير */
     background: transparent; /* لضمان عدم ظهور خلفية وردية عند التمرير */
 }
+
+.text-center {
+    text-align: center;
+    /* التعديلات الجديدة */
+    margin: 20px auto;      /* auto هي السر في توسيط الحاوية نفسها */
+    padding: 10px 20px;     /* زيادة البادنج الجانبي لحماية النص من الأطراف */
+    max-width: 80%;         /* لضمان أن النص لا يلمس حواف الشاشة في الجوال */
+    line-height: 1.5;       /* يعطي مساحة تنفس بين السطور إذا كان النص طويلاً */
+    
+    /* حافظت على خصائصك */
+    font-size: 30px;
+    color: #062A2F;
+    font-family: 'Poppins', sans-serif;
+}
