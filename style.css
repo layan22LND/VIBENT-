@@ -1,0 +1,103 @@
+
+body {
+    font-family: poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6ec;
+    /* منع الصفحة من التحرك يميناً ويساراً */
+    overflow-x: hidden; 
+    /* لضمان توسيط المحتوى بالنسبة للشاشة */
+    min-height: 100vh; 
+}
+
+/* البانر مرتب وثابت في الأعلى */
+.banner1 {
+    width: 100%;             /* تم تعديله من 800% إلى 100% لمنع الحوسة */
+    height: 150px;            
+    /* background-image: url("photos/Pattern2Outlined.png"); */
+    background-repeat: repeat-x; 
+    background-size: auto 100%;  
+    background-position: left center;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    width: 350px;
+    max-width: 90%; /* إضافة بسيطة لضمان عدم خروجه عن شاشة الجوال */
+    display: block;
+    margin: 0 auto;
+}
+
+.container {
+  /* background: linear-gradient(#237B84, #1B646B, #04383F ); */
+/* background: linear-gradient(
+        rgba(25, 105, 113, 0.85), 
+        rgba(27, 100, 107, 0.85), 
+        rgba(4, 56, 63, 0.85)
+    ); */
+
+background: linear-gradient(
+        rgba(35, 123, 132, 0.7), 
+        rgba(27, 100, 107, 0.7), 
+        rgba(4, 56, 63, 0.7)
+    );
+
+    display: flex;
+    justify-content: center; /* لضمان توسط النص داخل الزر */
+    align-items: center;
+    font-size: 40px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 10px auto; 
+    padding: 40px;
+    width: 80%;
+    max-width: 800px; 
+    height: 100px;
+    border-radius: 24px;
+    text-decoration: none;
+}
+
+a {
+    color: #000000;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #FFB7C5;
+    transform: scale(1.02);
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;    /* لضمان وجودها جنب بعض */
+    justify-content: center;
+    align-items: center;
+    gap: 35px;             /* المسافة بين كل أيقونة وأخرى */
+    margin-top: 30px;      /* مسافة بينها وبين آخر زر فوقها */
+    width: 100%;
+}
+
+.social-icons a {
+    padding: 0;            /* إلغاء البادنج القديم الخاص بالروابط */
+    border-radius: 0;      /* إلغاء أي حدود قديمة */
+    transition: transform 0.3s ease;
+}
+
+.social-icons img {
+    width: 60px;           /* حجم الأيقونة (يمكنك تكبيره أو تصغيره) */
+    height: 60px;
+    object-fit: contain;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15); /* تأثير تكبير خفيف عند التمرير */
+    background: transparent; /* لضمان عدم ظهور خلفية وردية عند التمرير */
+}
