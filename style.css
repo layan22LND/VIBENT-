@@ -1,26 +1,80 @@
-
-body {
-    /* font-family: poppins, sans-serif; */ 
-    font-family: 'bukra-Font', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   background-color: #f6f6ec; 
-   /* background-color: #9e0000; */
-    /* منع الصفحة من التحرك يميناً ويساراً */
-    overflow-x: hidden; 
-    /* لضمان توسيط المحتوى بالنسبة للشاشة */
-    min-height: 100vh; 
-    text-align: center;
+:root {
+  font-size:16px;
 }
 
-/* البانر مرتب وثابت في الأعلى */
+/* Grid
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .container {
+  position:relative;
+  width:100%;
+  max-width:37.5rem;            /* 600px */
+    text-align:center;
+  margin:0 auto;
+  /* padding:1rem 0.25rem 0 0.25rem; */
+  box-sizing:border-box;
+
+
+background-color: #f6f6ec; /* لونك الأساسي الفاتح */
+    
+    /* إضافات جمالية ليظهر الصندوق فوق الخلفية */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* ظل خفيف جداً يعطي فخامة */
+    min-height: 100vh; /* ليغطي الطول الكامل للشاشة */
+
+}
+.container-left {
+  position:relative;
+  width:100%;
+  max-width:37.5rem;
+  text-align:left;
+  margin:0 auto;
+  padding:0 1.25rem;
+  box-sizing:border-box;
+}
+.container-left p {
+  margin-bottom: 1rem;          /* 16px space between paragraphs */
+  }
+.column {
+  position:center;
+  width:100%;
+  float:center;
+  box-sizing:border-box;
+}
+/* For devices larger than 400px */
+  @media (min-width:25rem) {            /* 400px */
+    .container {
+  width:85%;
+  padding-left:0;
+  padding-right:0;
+}
+}/* For devices larger than 550px */
+  @media (min-width:34.375rem) {        /* 550px */
+    .container {
+  width:80%;
+}
+.column,.columns {
+  margin-left:0;
+}
+.column:first-child,.columns:first-child {
+  margin-left:0;
+}
+}
+
+/* Base Styles
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  body {
+  margin:0;
+  padding:0;
+  background-color: #f6f6ec; 
+  color:#1a1a1a;
+  font-family: 'bukra-Font', Arial, sans-serif;
+  font-size:1.125rem;             /* 18px */
+    font-weight:400;
+  line-height:1.6;
+}
+
 .banner1 {
     width: 100%;          
-    height: 150px;            
+    height: 65px;            
     /* background-image: url("photos/Pattern2Outlined.png"); */
     background-repeat: repeat-x; 
     background-size: auto 100%;  
@@ -36,67 +90,206 @@ body {
     position: relative;
 }
 
-.logo {
-    
-     width: 400px;
-    max-width: 90%; /* إضافة بسيطة لضمان عدم خروجه عن شاشة الجوال */
-    display: block;
-      margin: 0 auto; 
+/* Typography
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  h1 {
+  margin:0 0 0.5rem 0;
+  font-size:3rem;             /* 48px */
+    font-weight:800;
+  line-height:1;
+  letter-spacing:0;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+  hyphens:auto;               /* Delete this to remove automatic hyphen on line break */
+}
+.container p {
+  margin:0 0 2rem 0;
+}
 
+/* Base Typography Settings
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Base size - 16px browser default */
+:root {
+  font-size:15px;           /* Using a 1.25 modular scale for typography */
+  --scale-0:1rem;           /* 16px */
+  --scale-1:1.25rem;        /* 20px */
+  --scale-2:1.563rem;       /* 25px */
+  --scale-3:1.953rem;       /* 31px */
+  --scale-4:2.441rem;       /* 39px */
+  --scale-5:3.052rem;       /* 49px */
+
+  /* Spacing units */
+  --spacing-xs:0.5rem;      /* 8px */
+  --spacing-s:1rem;         /* 16px */
+  --spacing-m:1.5rem;       /* 24px */
+  --spacing-l:2rem;         /* 32px */
+  --spacing-xl:3rem;        /* 48px */
+  --spacing-xxl:4rem;       /* 64px */
+}
+
+/* Avatar */
+.avatar {
+  /* width: 13rem;             /* 128px */
+  /* height: 11rem; */
+  width: 18rem;             /* 128px */
+  height: auto;
+  /* border-radius: 50%; */ /* Uncomment this line for a circular avatar */
+  /* object-fit: cover;   */ /* Uncomment this line to ensure the image covers the avatar area without distortion */
+  background-position: center;
+  /* margin-bottom: var(--spacing-l); */ /* Space below the avatar */
+  margin-top: 10px;
+  margin-bottom: -50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  }
+
+/* Typography Scale */
+h1 {
+  margin:0 0 var(--spacing-m) 0;
+  font-size:var(--scale-5);           /* ~49px */
+    font-weight:800;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+}
+body {
+  font-size:var(--scale-1);           /* 20px */
+    line-height:1.6;
+}
+.container p {
+  margin:0 0 var(--spacing-xl) 0;
+  font-size:var(--scale-1);
+  line-height:1.6;
+}
+
+/* Container spacing */
+  .container {
+  padding:var(--spacing-s) var(--spacing-m) 0 var(--spacing-m);
+  text-align:center;
+} 
+
+/* Footer */
+footer {
+  margin:var(--spacing-xxl) 0;            /* 4rem (64px) top and bottom */
+    font-size:var(--scale-0);
+}
+
+/* Responsive adjustments */
+@media (max-width:34.375rem) {              /* 550px */
+  h1 {
+  font-size:var(--scale-4);
+}
+body {
+  font-size:var(--scale-0);
+}
+.container p {
+  font-size:var(--scale-0);
+}
+.avatar {
+  margin-bottom:var(--spacing-m);
+}
+footer {
+  margin:var(--spacing-xl) 0;           /* 3rem (48px) top and bottom */
+}
 }
 
 
+/* Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.container {
-  /* background: linear-gradient(#237B84, #1B646B, #04383F ); */
-/* background: linear-gradient(
-        rgba(25, 105, 113, 0.85), 
-        rgba(27, 100, 107, 0.85), 
-        rgba(4, 56, 63, 0.85)
-    ); */
 
-background: linear-gradient(
+    width: 100%;          /* ليكون متجاوباً مع الجوال */
+    max-width: 900px;    /* ليكون مرتباً في اللابتوب */ 
+    min-height: 4.5rem;  /* ارتفاع مريح للضغط */
+
+/* التوسط (أهم سطرين) */
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0.75rem 1rem;
+    
+    /* ألوان VIBENT المقترحة (أو ضعي ألوانك الخاصة) */
+    /* background: linear-gradient(rgba(35, 123, 132, 0.8), rgba(27, 100, 107, 0.8)); */
+    background: linear-gradient(
         rgba(35, 123, 132, 0.7), 
         rgba(27, 100, 107, 0.7), 
         rgba(4, 56, 63, 0.7)
     );
-
-    display: flex;
-    justify-content: center; /* لضمان توسط النص داخل الزر */
-    align-items: center;
-    font-size: 40px;
-    font-weight: 500;
-    color: #ffffff;
-    margin: 10px auto; 
-    padding: 40px;
-    width: 80%;
-    max-width: 800px; 
-    height: 100px;
-    border-radius: 24px;
+    color: #ffffff;      /* لون النص أبيض */
+    
+    border-radius: 15px;
     text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
 }
 
-a {
-    color: #000000;
-    padding: 0 15px;
-    text-decoration: none;
+/* تأثير عند مرور الماوس (Hover) */
+.button:hover {
+    transform: translateY(-2px); /* يرتفع قليلاً */
+    filter: brightness(1.1);     /* يفتح اللون قليلاً */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-a:hover {
-    background-color: #FFB7C5;
-    transform: scale(1.02);
+/* Icons
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.icon {
+  width:1.25rem;
+  height:1.25rem;
+  margin-right:0.5rem;
+  flex-shrink:0;
 }
 
+
+
+/* Responsive Typography
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  @media (max-width:34.375rem) {            /* 550px */
+    h1 {
+  font-size:2rem;                         /* 32px */
+  }
+  body {
+  font-size:1rem;                       /* 16px */
+  }
+}
+
+/* Social Icons
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .social-icons {
     display: flex;
     flex-direction: row;    /* لضمان وجودها جنب بعض */
     justify-content: center;
     align-items: center;
-    gap: 35px;             /* المسافة بين كل أيقونة وأخرى */
-    margin-top: 30px;      /* مسافة بينها وبين آخر زر فوقها */
-    width: 100%;
+    gap: 1.5rem;             /* المسافة بين كل أيقونة وأخرى */
+    /* margin: 40px auto 0 auto;      /* مسافة بينها وبين آخر زر فوقها */
+    margin: 2.5rem auto;
+    width: 100%;          /* يمكنك ضبط العرض حسب الحاجة */
+    /* max-width: 70%; */     /* لضبط الحد الأقصى للعرض */
 }
 
+.social-icons img {
+    width: 30px;           /* حجم الأيقونة (يمكنك تكبيره أو تصغيره) */
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.85;
+}
+
+.social-icons a:hover img {
+    transform: translateY(-3px); /* ترتفع للأعلى قليلاً بدل التكبير */
+    opacity: 1;                  /* توضح أكثر عند مرور الماوس */
+}
+
+@media (max-width: 34.375rem) {
 .social-icons a {
     padding: 0;            /* إلغاء البادنج القديم الخاص بالروابط */
     border-radius: 0;      /* إلغاء أي حدود قديمة */
@@ -104,8 +297,8 @@ a:hover {
 }
 
 .social-icons img {
-    width: 60px;           /* حجم الأيقونة (يمكنك تكبيره أو تصغيره) */
-    height: 60px;
+    width: 30px;           /* حجم الأيقونة (يمكنك تكبيره أو تصغيره) */
+    height: 30px;
     object-fit: contain;
 }
 
@@ -113,16 +306,24 @@ a:hover {
     transform: scale(1.15); /* تأثير تكبير خفيف عند التمرير */
     background: transparent; /* لضمان عدم ظهور خلفية وردية عند التمرير */
 }
+}
 
-.text-center {
-    text-align: center;
-    /* التعديلات الجديدة */
-    margin: 20px auto;      /* auto هي السر في توسيط الحاوية نفسها */
-    padding: 10px 20px;     /* زيادة البادنج الجانبي لحماية النص من الأطراف */
-    max-width: 80%;         /* لضمان أن النص لا يلمس حواف الشاشة في الجوال */
-    line-height: 1.5;       /* يعطي مساحة تنفس بين السطور إذا كان النص طويلاً */
-    
-    /* حافظت على خصائصك */
-    font-size: 30px;
-    color: #062A2F;
+/* --- تعديلات خاصة بالجوال لضبط تباعد اللوجو لـ VIBENT --- */
+@media (max-width: 34.375rem) {
+
+  .container {
+    padding-bottom: 20px !important; /* مسافة كافية تمنع قص الأيقونات */
+}
+
+    /* 2. ضبط مقاس اللوجو وتداخل المسافات في الجوال */
+    .avatar {
+        width: 14rem !important;      /* تصغير اللوجو ليناسب عرض الجوال */
+        margin-top: 5px !important;    /* تقريبه من البانر */
+        margin-bottom: -30px !important; /* تقريبه من الأزرار */
+    }
+
+    /* 3. التأكد من أن الأزرار تبدأ مباشرة بعد اللوجو */
+    .button-stack {
+        margin-top: 0 !important;
+    }
 }
