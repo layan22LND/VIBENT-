@@ -7,7 +7,7 @@
   .container {
   position:relative;
   width:100%;
-  max-width:37.5rem;            /* 600px */
+  max-width:37.5rem;            /* 600px */  
     text-align:center;
   margin:0 auto;
   /* padding:1rem 0.25rem 0 0.25rem; */
@@ -40,7 +40,8 @@ background-color: #f6f6ec; /* لونك الأساسي الفاتح */
   box-sizing:border-box;
 }
 /* For devices larger than 400px */
-  @media (min-width:25rem) {            /* 400px */
+/* كان ٢٥ rem */
+  @media (min-width:30rem) {            /* 400px */
     .container {
   width:85%;
   padding-left:0;
